@@ -9,7 +9,6 @@ import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContextBuilder;
-import org.yaml.snakeyaml.Yaml;
 
 import javax.net.ssl.SSLContext;
 import java.io.IOException;
@@ -17,7 +16,6 @@ import java.io.InputStream;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Map;
 
 public class ConfigurationReader {
     private static ConfigurationReader instance = null;

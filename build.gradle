@@ -76,28 +76,14 @@ allprojects{
         }
     }
 }
-    dependencies {
-        compile project(':Model')
-    }
 
-buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
-    }
-    dependencies {
-        classpath 'no.tornado:fxlauncher-gradle-plugin:1.0.17'
-        classpath group: 'org.yaml', name: 'snakeyaml', version: '1.7'
-    }
+
+configurations {
+    jar.archiveName = 'tix-time-client.jar'
 }
-
-apply plugin: 'no.tornado.fxlauncher'
-def cfg = new org.yaml.snakeyaml.Yaml().load( file("$projectDir/Model/src/main/resources/Application.yml").newInputStream() );
-fxlauncher {
-    applicationVendor 'TiX'
-    applicationUrl cfg.url+'/downloads/assets/'
-    applicationMainClass 'com.github.tix_measurements.time.client.Main'
-    deployTarget 'jperezcu@tix.innova-red.net:/var/www/downloads/assets'
-    cacheDir 'USERLIB/tix-time-client'
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.github.tix_measurements.time.model.Main'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
