@@ -21,9 +21,8 @@ def cfg = new org.yaml.snakeyaml.Yaml().load( file("$rootProject.projectDir/tix-
 
 fxlauncher {
     applicationVendor 'TiX'
-    // applicationUrl cfg.url+'/downloads/assets/'
-    applicationUrl 'http://localhost:8000'
+    applicationUrl cfg.clientRepositoryUrl
     applicationMainClass 'com.github.tix_measurements.time.client.gui.Main'
-    //deployTarget 'jperezcu@tix.innova-red.net:/var/www/downloads/assets'
+    deployTarget cfg.deployTarget
     cacheDir 'USERLIB/tix-time-client'
 }

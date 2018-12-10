@@ -1,17 +1,6 @@
-# https: true, url: https://tix.innova-red.net, ip: 200.10.202.29, port: 4500 #para conectarse al sitio.
-# https: false y url: localhost:4500, ip: 127.0.0.1, port: 4500 para conectarse al servidor corriendo en localhost puerto 4500.
-# (puede escribir la combinacion ip:puerto que desee).
-#El puerto cliente por defecto es 4501, el puerto del servidor por defecto es 4500
-https: false
-url:  https://tix.innova-red.net
-ip: 200.10.202.29
+clientRepositoryUrl: https://tix.innova-red.net
+deployTargetUrl:  'jperezcu@tix.innova-red.net:/var/www/downloads/assets'
+webApiUrl:  https://tix.innova-red.net
+serverIp: 200.10.202.29
 serverPort: 4500
 clientPort: 4501
-
-#https: false
-#url:  http://localhost:4500
-#ip: 127.0.0.1
-#serverPort: 4500
-#clientPort: 4501
-#logsPath: "tix-model-logs"
-#savelogsLocally: true
